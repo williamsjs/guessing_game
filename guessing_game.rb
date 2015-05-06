@@ -1,5 +1,10 @@
+require 'date'
+
 def guessing(guess)
-  random_num = rand(1..100)
+  new_milli = DateTime.now.strftime('%s').to_i.to_s
+  milli_array = new_milli.split('')
+  random_num = milli_array[8] + milli_array[9]
+  random_num = random_num.to_i
   count = 0
   hot_or_cold(guess, random_num, count)
 end
